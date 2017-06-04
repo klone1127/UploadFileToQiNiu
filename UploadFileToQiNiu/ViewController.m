@@ -42,7 +42,7 @@
 
 - (NSString *)token {
     NSString *accessKey = @"DoBVQEyHluJ27PPgPBIfp93HvfkloUSBc9aEBc9I";
-    NSString *secret = @"添加七牛密钥";
+    NSString *secret = @"";
     NSString *bucketName = @"blog";
     return [NSString getQiNiuToken:accessKey secretKey:secret bucketName:bucketName deadline:1];
 }
@@ -70,9 +70,10 @@
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = @"上传成功";
     [alert addButtonWithTitle:@"好的"];
+    alert.informativeText = @"再来上传一张吧";
     alert.alertStyle = NSAlertStyleWarning;
     
-    [alert beginSheetModalForWindow:[NSApplication sharedApplication].keyWindow completionHandler:^(NSModalResponse returnCode) {
+    [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
         NSLog(@"点击确定按钮了");
     }];
 }
