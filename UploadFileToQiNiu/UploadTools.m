@@ -12,7 +12,7 @@
 #import "NSAlert+Common.h"
 
 #define kBucketName     @"blog"
-#define kAccessKey      @"DoBVQEyHluJ27PPgPBIfp93HvfkloUSBc9aEBc9I"
+#define kAccessKey      @""
 #define kSecret         @""
 
 @implementation UploadTools
