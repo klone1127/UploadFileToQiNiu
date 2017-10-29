@@ -26,8 +26,8 @@
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSString *base64 = [QNUrlSafeBase64 encodeData:jsonData];
-    //    NSString *hmacSHA1 = [secret hmacSHA1StringWithKey:base64];
     NSString *hmacSHA1 = [self hmacSha1Key:secret textData:base64];
+    // token 由三部分组成
     NSString *token = [NSString stringWithFormat:@"%@:%@:%@", accessKey, hmacSHA1, base64];
     return token;
     
@@ -39,10 +39,17 @@
     if (error) {
         NSLog(@"generation json error:%@", error);
     }
-    
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
+
+/**
+ 加密
+
+ @param key  secretKey
+ @param text
+ @return 加密后的字符串
+ */
 + (NSString *)hmacSha1Key:(NSString*)key textData:(NSString*)text {
     const char *cData  = [text cStringUsingEncoding:NSUTF8StringEncoding];
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
@@ -61,13 +68,8 @@
  */
 + (NSString *)deadLine:(CGFloat)hour {
     CGFloat seconds = hour * 3600;
-    
     NSDate *addedSeconds = [[NSDate getCurrentTime] dateByAddingTimeInterval:seconds];
-    
     return [NSString stringWithFormat:@"%.f", addedSeconds.timeIntervalSince1970];
-    
-    //    NSDate *date = [NSDate dateWithTimeInterval:seconds sinceDate:[NSDate date]];
-    //    return [NSString stringWithFormat:@"%.f", [date timeIntervalSince1970]];
 }
 
 

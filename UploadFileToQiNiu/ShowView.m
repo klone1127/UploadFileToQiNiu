@@ -49,6 +49,10 @@
     }
 }
 
+- (void)showImg:(NSString *)imgPath {
+//    self.showImageView.image = [NSImage image];
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     

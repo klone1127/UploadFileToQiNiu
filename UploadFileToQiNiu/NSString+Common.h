@@ -10,6 +10,12 @@
 
 @interface NSString (Common)
 
+/**
+ 获取图片名
+
+ @param imagePath 图片路径
+ @return 图片名
+ */
 + (NSString *)imageName:(NSString *)imagePath;
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2DC758802AFBEA23C7A6CB37 /* libPods-UploadFileToQiNiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E1E19336A2164257503E50 /* libPods-UploadFileToQiNiu.a */; };
+		7D4073831FA60E170098E334 /* UploadTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4073821FA60E170098E334 /* UploadTools.m */; };
+		7D4073861FA61C530098E334 /* NSAlert+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4073851FA61C530098E334 /* NSAlert+Common.m */; };
 		8BA5304A1EE25DE7001D8D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA530491EE25DE7001D8D78 /* AppDelegate.m */; };
 		8BA5304D1EE25DE7001D8D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5304C1EE25DE7001D8D78 /* main.m */; };
 		8BA530501EE25DE7001D8D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5304F1EE25DE7001D8D78 /* ViewController.m */; };
@@ -42,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		0FBBC05787E78ECE91329D07 /* Pods-UploadFileToQiNiu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadFileToQiNiu.release.xcconfig"; path = "Pods/Target Support Files/Pods-UploadFileToQiNiu/Pods-UploadFileToQiNiu.release.xcconfig"; sourceTree = "<group>"; };
+		7D4073811FA60E170098E334 /* UploadTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadTools.h; sourceTree = "<group>"; };
+		7D4073821FA60E170098E334 /* UploadTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadTools.m; sourceTree = "<group>"; };
+		7D4073841FA61C530098E334 /* NSAlert+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Common.h"; sourceTree = "<group>"; };
+		7D4073851FA61C530098E334 /* NSAlert+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Common.m"; sourceTree = "<group>"; };
 		8BA530451EE25DE7001D8D78 /* UploadFileToQiNiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadFileToQiNiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA530481EE25DE7001D8D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BA530491EE25DE7001D8D78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -195,6 +201,10 @@
 				8BA530841EE29A01001D8D78 /* NSString+QiNiu.m */,
 				8BA530881EE2AED1001D8D78 /* NSString+Common.h */,
 				8BA530891EE2AED1001D8D78 /* NSString+Common.m */,
+				7D4073811FA60E170098E334 /* UploadTools.h */,
+				7D4073821FA60E170098E334 /* UploadTools.m */,
+				7D4073841FA61C530098E334 /* NSAlert+Common.h */,
+				7D4073851FA61C530098E334 /* NSAlert+Common.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -384,10 +394,12 @@
 			files = (
 				8BA530861EE29A01001D8D78 /* NSString+Hash.m in Sources */,
 				8BA530501EE25DE7001D8D78 /* ViewController.m in Sources */,
+				7D4073831FA60E170098E334 /* UploadTools.m in Sources */,
 				8BA5307A1EE29342001D8D78 /* ShowImageView.m in Sources */,
 				8BA5304D1EE25DE7001D8D78 /* main.m in Sources */,
 				8BA530871EE29A01001D8D78 /* NSString+QiNiu.m in Sources */,
 				8BA5307D1EE29788001D8D78 /* ShowView.m in Sources */,
+				7D4073861FA61C530098E334 /* NSAlert+Common.m in Sources */,
 				8BA5304A1EE25DE7001D8D78 /* AppDelegate.m in Sources */,
 				8BA5308A1EE2AED1001D8D78 /* NSString+Common.m in Sources */,
 				8BA530851EE29A01001D8D78 /* NSDate+Common.m in Sources */,
