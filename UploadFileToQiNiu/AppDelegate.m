@@ -24,4 +24,11 @@
 }
 
 
+/**
+ 左上角点 ☓ 就退出程序(在 Dock 不显示)
+ */
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
 @end
