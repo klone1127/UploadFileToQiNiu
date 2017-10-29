@@ -11,6 +11,7 @@
 #import "ShowView.h"
 #import "UploadTools.h"
 #import "NSAlert+Common.h"
+#import "Macros.h"
 
 @interface ViewController()<GetImagePathDelegate>
 
@@ -28,6 +29,12 @@
     [self.view addSubview:self.showView];
     self.showView.getImagePathDelegate = self;
     [self.showView loadView:self.view];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshShowViewImg:) name:kRefreshShowViewImg object:nil];
+}
+
+- (void)refreshShowViewImg:(NSNotification *)not {
+    [self.showView showImg:[not.userInfo objectForKey:kRefreshShowViewImgPath]];
 }
 
 - (void)getImagePath:(NSString *)path {

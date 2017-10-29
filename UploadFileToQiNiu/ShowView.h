@@ -27,4 +27,11 @@
  */
 - (void)loadView:(NSView *)view;
 
+/**
+ 通过绝对路径显示图片
+
+ @param imgPath 路径
+ */
+- (void)showImg:(NSString *)imgPath;
+
 @end

@@ -13,7 +13,7 @@
 
 #define kBucketName     @"blog"
 #define kAccessKey      @"DoBVQEyHluJ27PPgPBIfp93HvfkloUSBc9aEBc9I"
-#define kSecret         @"nj1uP6VZ00NcbSZHPsm4IFA128hAYBvdpECO1Bzt"
+#define kSecret         @""
 
 @implementation UploadTools
 
@@ -38,7 +38,6 @@
     NSString *imageName = [NSString imageName:path];
     [self uploadWithToken:[self token] imageName:imageName path:path completionHandle:completionHandle];
 }
-
 
 /**
  配置要上传到的空间，获取到 token

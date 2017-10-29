@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "UploadTools.h"
+#import "ShowView.h"
+#import "Macros.h"
 
 @interface AppDelegate ()
 
@@ -25,14 +27,8 @@
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
-    NSAlert *alert = [[NSAlert alloc] init];
-    alert.alertStyle = NSAlertStyleInformational;
-    alert.messageText = [NSString stringWithFormat:@"打开的软件是: %@", filename];
-    [alert addButtonWithTitle:@"嗯好"];
-    [alert beginSheetModalForWindow:[NSApplication sharedApplication].keyWindow completionHandler:^(NSModalResponse returnCode) {
-        
-    }];
-    
+    // 更新要显示的图片
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshShowViewImg object:nil userInfo:@{kRefreshShowViewImgPath: filename}];
     [UploadTools uploadWithImgPath:filename];
     
     return YES;

@@ -50,7 +50,7 @@
 }
 
 - (void)showImg:(NSString *)imgPath {
-//    self.showImageView.image = [NSImage image];
+    self.showImageView.image = [[NSImage alloc] initWithContentsOfFile:imgPath];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
