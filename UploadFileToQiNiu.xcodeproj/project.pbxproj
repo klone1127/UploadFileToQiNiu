@@ -49,6 +49,8 @@
 		7D4073841FA61C530098E334 /* NSAlert+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Common.h"; sourceTree = "<group>"; };
 		7D4073851FA61C530098E334 /* NSAlert+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Common.m"; sourceTree = "<group>"; };
 		7D4073881FA6235F0098E334 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		7D6FF4F31FA9CEEB00A795EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7D6FF4F51FA9CEFC00A795EE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		8BA530451EE25DE7001D8D78 /* UploadFileToQiNiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadFileToQiNiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA530481EE25DE7001D8D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BA530491EE25DE7001D8D78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +120,8 @@
 		4D875A8F1C586508C9102EB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D6FF4F51FA9CEFC00A795EE /* OpenGL.framework */,
+				7D6FF4F31FA9CEEB00A795EE /* QuartzCore.framework */,
 				C2E1E19336A2164257503E50 /* libPods-UploadFileToQiNiu.a */,
 			);
 			name = Frameworks;
@@ -555,6 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu89;
 				INFOPLIST_FILE = UploadFileToQiNiu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klone1127.UploadFileToQiNiu;
@@ -569,6 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu89;
 				INFOPLIST_FILE = UploadFileToQiNiu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klone1127.UploadFileToQiNiu;

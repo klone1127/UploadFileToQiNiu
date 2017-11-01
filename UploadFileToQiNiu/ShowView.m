@@ -9,14 +9,16 @@
 #import "ShowView.h"
 #import <Masonry.h>
 
+#define kMaxH       270.0
+#define kMaxW       480.0
+
 @interface ShowView()<DragResultDelegate>
 
 @end
 
 @implementation ShowView
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         
@@ -33,11 +35,13 @@
     self.showImageView = [[ShowImageView alloc] init];
     [self addSubview:self.showImageView];
     self.showImageView.dragResultDelegate = self;
+    
     self.showImageView.layer.backgroundColor = [NSColor cyanColor].CGColor;
     
     [self.showImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self).with.offset(20);
-        make.right.bottom.equalTo(self).with.offset(-20);
+        make.height.mas_lessThanOrEqualTo(kMaxH);
+        make.width.mas_lessThanOrEqualTo(kMaxW);
+        make.center.equalTo(self);
     }];
     self.showImageView.image = [NSImage imageNamed:@"plus"];
 }
