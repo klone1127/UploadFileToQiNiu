@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <QiniuSDK.h>
 
+typedef enum : NSUInteger {
+    华东 = 1,
+    华北,
+    华南,
+    北美
+} ZoneEnum;
+
 typedef void(^UploadSuccess)();
 typedef void(^UploadFailure)();
 
 @interface UploadTools : NSObject
+
+@property (nonatomic, copy) NSString *accessKey;
+@property (nonatomic, copy) NSString *secret;
+@property (nonatomic, copy) NSString *bucketName;
+@property (nonatomic, assign) NSInteger zone;
 
 /**
  上传至七牛云服务器
@@ -28,4 +40,6 @@ typedef void(^UploadFailure)();
  @param path
  */
 + (void)uploadWithImgPath:(NSString *)path;
+
+- (void)uploadWithImgPath:(NSString *)path;
 @end

@@ -11,14 +11,23 @@
 #import "NSString+QiNiu.h"
 #import "NSAlert+Common.h"
 
-#define kBucketName     @"blog"
-#define kAccessKey      @""
-#define kSecret         @""
-
 @implementation UploadTools
 
 + (void)uploadWithImgPath:(NSString *)path {
     [UploadTools getImagePath:path completionHandle:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        // 成功
+        if (resp != nil) {
+            NSLog(@"上传成功: %@", info);
+            [NSAlert showAlertMsg:[NSString stringWithFormat:@"%@/%@", info.serverIp, key] suc:YES];
+        } else { //  失败
+            NSLog(@"上传失败: %@", info);
+            [NSAlert showAlertMsg:[NSString stringWithFormat:@"错误码：%d \n 错误信息：%@", info.statusCode, info.error] suc:NO];
+        }
+    }];
+}
+
+- (void)uploadWithImgPath:(NSString *)path {
+    [self getImagePath:path completionHandle:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         // 成功
         if (resp != nil) {
             NSLog(@"上传成功: %@", info);
@@ -45,9 +54,9 @@
  @return token
  */
 - (NSString *)token {
-    NSString *accessKey = kAccessKey;
-    NSString *secret = kSecret;
-    NSString *bucketName = kBucketName;
+    NSString *accessKey = self.accessKey;
+    NSString *secret = self.secret;
+    NSString *bucketName = self.bucketName;
     return [NSString getQiNiuToken:accessKey secretKey:secret bucketName:bucketName deadline:1];
 }
 
@@ -61,9 +70,8 @@
  @param success 
  */
 - (void)uploadWithToken:(NSString *)token imageName:(NSString *)imageName path:(NSString *)path completionHandle:(QNUpCompletionHandler)completionHandle {
-    
     QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
-        builder.zone = [QNZone zone2];
+        builder.zone = [self selectedZone:self.zone];
     }];
     
     QNUploadManager *uploadManager = [[QNUploadManager alloc] initWithConfiguration:config];
@@ -75,6 +83,26 @@
                       NSLog(@"info:%@", info);
                       completionHandle(info, key, resp);
                   } option:nil];
+}
+
+- (QNZone *)selectedZone:(NSInteger)zone {
+    switch (zone) {
+        case 华东:
+            return [QNZone zone0];
+            break;
+        case 华北:
+            return [QNZone zone1];
+            break;
+        case 华南:
+            return [QNZone zone2];
+            break;
+        case 北美:
+            return [QNZone zoneNa0];
+            break;
+        default:
+            break;
+    }
+    return nil;
 }
 
 @end

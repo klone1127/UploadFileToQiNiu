@@ -10,6 +10,9 @@
 		2DC758802AFBEA23C7A6CB37 /* libPods-UploadFileToQiNiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E1E19336A2164257503E50 /* libPods-UploadFileToQiNiu.a */; };
 		7D4073831FA60E170098E334 /* UploadTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4073821FA60E170098E334 /* UploadTools.m */; };
 		7D4073861FA61C530098E334 /* NSAlert+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4073851FA61C530098E334 /* NSAlert+Common.m */; };
+		7DF05F41211B2B1500FC01B7 /* ButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF05F40211B2B1500FC01B7 /* ButtonsView.m */; };
+		7DF05F43211B2B2500FC01B7 /* ButtonsViewNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF05F42211B2B2500FC01B7 /* ButtonsViewNib.xib */; };
+		7DF05F46211C6AD800FC01B7 /* NSView+NibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF05F45211C6AD800FC01B7 /* NSView+NibLoading.m */; };
 		8BA5304A1EE25DE7001D8D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA530491EE25DE7001D8D78 /* AppDelegate.m */; };
 		8BA5304D1EE25DE7001D8D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5304C1EE25DE7001D8D78 /* main.m */; };
 		8BA530501EE25DE7001D8D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5304F1EE25DE7001D8D78 /* ViewController.m */; };
@@ -51,6 +54,11 @@
 		7D4073881FA6235F0098E334 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		7D6FF4F31FA9CEEB00A795EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7D6FF4F51FA9CEFC00A795EE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7DF05F3F211B2B1500FC01B7 /* ButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonsView.h; sourceTree = "<group>"; };
+		7DF05F40211B2B1500FC01B7 /* ButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonsView.m; sourceTree = "<group>"; };
+		7DF05F42211B2B2500FC01B7 /* ButtonsViewNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsViewNib.xib; sourceTree = "<group>"; };
+		7DF05F44211C6AD800FC01B7 /* NSView+NibLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+NibLoading.h"; sourceTree = "<group>"; };
+		7DF05F45211C6AD800FC01B7 /* NSView+NibLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+NibLoading.m"; sourceTree = "<group>"; };
 		8BA530451EE25DE7001D8D78 /* UploadFileToQiNiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadFileToQiNiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA530481EE25DE7001D8D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BA530491EE25DE7001D8D78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +142,9 @@
 				8BA530791EE29342001D8D78 /* ShowImageView.m */,
 				8BA5307B1EE29788001D8D78 /* ShowView.h */,
 				8BA5307C1EE29788001D8D78 /* ShowView.m */,
+				7DF05F3F211B2B1500FC01B7 /* ButtonsView.h */,
+				7DF05F40211B2B1500FC01B7 /* ButtonsView.m */,
+				7DF05F42211B2B2500FC01B7 /* ButtonsViewNib.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -207,6 +218,8 @@
 		8BA5307E1EE299EA001D8D78 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7DF05F44211C6AD800FC01B7 /* NSView+NibLoading.h */,
+				7DF05F45211C6AD800FC01B7 /* NSView+NibLoading.m */,
 				8BA5307F1EE29A01001D8D78 /* NSDate+Common.h */,
 				8BA530801EE29A01001D8D78 /* NSDate+Common.m */,
 				8BA530811EE29A01001D8D78 /* NSString+Hash.h */,
@@ -334,6 +347,7 @@
 			files = (
 				8BA530521EE25DE7001D8D78 /* Assets.xcassets in Resources */,
 				8BA530551EE25DE7001D8D78 /* Main.storyboard in Resources */,
+				7DF05F43211B2B2500FC01B7 /* ButtonsViewNib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +425,9 @@
 				7D4073831FA60E170098E334 /* UploadTools.m in Sources */,
 				8BA5307A1EE29342001D8D78 /* ShowImageView.m in Sources */,
 				8BA5304D1EE25DE7001D8D78 /* main.m in Sources */,
+				7DF05F46211C6AD800FC01B7 /* NSView+NibLoading.m in Sources */,
 				8BA530871EE29A01001D8D78 /* NSString+QiNiu.m in Sources */,
+				7DF05F41211B2B1500FC01B7 /* ButtonsView.m in Sources */,
 				8BA5307D1EE29788001D8D78 /* ShowView.m in Sources */,
 				7D4073861FA61C530098E334 /* NSAlert+Common.m in Sources */,
 				8BA5304A1EE25DE7001D8D78 /* AppDelegate.m in Sources */,

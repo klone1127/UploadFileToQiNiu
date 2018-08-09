@@ -29,7 +29,9 @@
 - (void)loadView:(NSView *)view {
     
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(view);
+        make.left.right.equalTo(view);
+        make.top.equalTo(view).offset(0);
+        make.bottom.equalTo(view).offset(-150);
     }];
     
     self.showImageView = [[ShowImageView alloc] init];
